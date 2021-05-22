@@ -19,7 +19,7 @@ const Account = (props) => {
                 <View style={{width:'10%'}}></View>
             </View>
             <ImageBackground
-            source= {{uri:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.seekpng.com%2Fipng%2Fu2w7y3e6o0o0i1q8_login-panel%2F&psig=AOvVaw3AUHoYQdjdEnwhcz8kmuex&ust=1621335193077000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMCio7jG0PACFQAAAAAdAAAAABAJ",}}
+            source= {{uri:"https://www.adobe.com/express/create/media_141efea30cca217e8cb7fb3abb8ed9d663c29d550.jpeg?width=2000&format=webply&optimize=medium",}}
             style={{width:280,height:280,marginTop:20 , marginBottom:20 }}
             imageStyle={{borderRadius:200}}>
                 <FontAwesome name="camera" size={30} color="grey"

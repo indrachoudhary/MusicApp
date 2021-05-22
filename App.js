@@ -25,6 +25,7 @@ import StreamingQuality from './Settings/StreamingQuality';
 import MyDownload from './MyMusic/MyDownload';
 import MyFavs from './MyMusic/MyFavs';
 import Mylibrary from './MyMusic/MyLibrary';
+import Navigation from './Settings/Navigation';
 
 const Stack = createStackNavigator();
 
@@ -51,6 +52,8 @@ export default function App() {
         <Stack.Screen name = 'MyFavs' component={MyFavs}  
         options={{headerShown:false}}/>
         <Stack.Screen name = 'MyLibrary' component={Mylibrary}  
+        options={{headerShown:false}}/>
+        <Stack.Screen name = 'Navigation' component={Navigation}  
         options={{headerShown:false}}/>
 
 

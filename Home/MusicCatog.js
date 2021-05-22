@@ -17,7 +17,7 @@ export class MusicCatog extends Component {
       },
       {
         name: "HipHop",
-        img: require("../assets/favicon.png"),
+        img: {uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS4AjP4Y7GXF8Ofifsm15Cm9m0Cyyp8kSsvA&usqp=CAU"},
         id: "2",
       },
       {

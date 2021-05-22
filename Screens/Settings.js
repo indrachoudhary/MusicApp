@@ -1,5 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, TouchableOpacity, View,Switch, ScrollView } from 'react-native';
+import React,{useState} from 'react';
 import Equalizer from '../Settings/Equalizer';
 import DownloadQuality from '../Settings/DownloadQuality';
 import LanguagePref from '../Settings/LanguagePref';
@@ -7,6 +7,8 @@ import StreamingQuality from '../Settings/StreamingQuality'
 import {Feather, FontAwesome5, MaterialIcons, MaterialCommunityIcons} from 'react-native-vector-icons';
 
 const Settings = (props) => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
     return (
         <View style={styles.container}>
       <View style={styles.header}>
@@ -30,6 +32,7 @@ const Settings = (props) => {
         </View>
         <View style={{ width: "10%" }}></View>
       </View>
+      <ScrollView style={{width:'100%'}}>
       <Text
         style={{ fontWeight: "bold", fontSize: 18, color: "white", padding: 5 }}
       >
@@ -46,7 +49,7 @@ const Settings = (props) => {
               justifyContent: "center",
             }}
           >
-            <Text style={{ color: "darkgrey" }}>Language Preference</Text>
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Language Preference</Text>
           </View>
           <View
             style={{
@@ -73,7 +76,7 @@ const Settings = (props) => {
               justifyContent: "center",
             }}
           >
-            <Text style={{ color: "darkgrey" }}>Equalizer</Text>
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Equalizer</Text>
           </View>
           <View
             style={{
@@ -98,7 +101,7 @@ const Settings = (props) => {
               justifyContent: "center",
             }}
           >
-            <Text style={{ color: "darkgrey" }}>Streaming Quality</Text>
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Streaming Quality</Text>
           </View>
           <View
             style={{
@@ -146,7 +149,7 @@ const Settings = (props) => {
               justifyContent: "center",
             }}
           >
-            <Text style={{ color: "darkgrey" }}>Download Quality</Text>
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Download Quality</Text>
           </View>
           <View
             style={{
@@ -183,6 +186,104 @@ const Settings = (props) => {
           </View>
         </View>
       </TouchableOpacity>
+      <View style={{flexDirection:'row', alignItems:'center',width:'100%'}}>
+        <Text style={{color:'white', padding:5,fontSize:18, fontWeight:'bold'}}>
+          Data Usage
+        </Text>
+        <Text style={{color:'grey', padding:5,marginTop:3, marginLeft:10}}> 218.9MB </Text>
+      </View>
+      
+        <View style={styles.list}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "80%",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Data Saver</Text>
+            <Text style={{color:'grey',fontSize:12}} >
+              Sets your music quality to low and disables artist canvases</Text>
+          </View>
+          <View
+            style={{
+              alignItems: "flex-end",
+              width: "20%",
+              justifyContent: "center",
+            }}
+          >
+            <Switch
+              trackColor={{ false: "#767577", true: "#3edbf0" }}
+              thumbColor={isEnabled ? "yellow" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View>
+        </View>
+     
+     
+        <View style={styles.list}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "80%",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Data Usage Warning</Text>
+          </View>
+          <View
+            style={{
+              alignItems: "flex-end",
+              width: "20%",
+              justifyContent: "center",
+    
+            }}
+          >
+            <Switch
+              trackColor={{ false: "#767577", true: "#3edbf0" }}
+              thumbColor={isEnabled ? "yellow" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View>
+        </View>
+        <TouchableOpacity onPress={()=> props.navigation.navigate("Navigation")}>
+        <Text  style={{ color: "white",fontSize:18, fontWeight:'600', padding:5}}>
+          Connect to App
+        </Text>
+        <View style={styles.list}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "80%",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Navigation</Text>
+            <Text style={{color:'grey',fontSize:12}} >
+              connect to navigation app</Text>
+          </View>
+  
+          <View
+            style={{
+              alignItems: "flex-end",
+              width: "20%",
+              justifyContent: "center",
+              paddingRight:5,
+            }}
+          >
+            <Feather name="Navigation" size={24} color="white"/>
+           
+          </View>
+        </View>
+        </TouchableOpacity>
+        </ScrollView>
+        
+      
+
     </View>
   );
 };
@@ -202,7 +303,7 @@ const styles = StyleSheet.create({
   },
   list: {
     backgroundColor: "#222831",
-    height: 50,
+    height: 60,
     width: "100%",
     padding: 5,
     flexDirection: "row",
