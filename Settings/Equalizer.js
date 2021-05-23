@@ -50,7 +50,7 @@ const Equalizer = (props) => {
           uncheckedColor="white"
           color="#3edbf0"
         />
-        <Text style={styles.optionname}>Normal</Text>
+        <Text style={styles.optionname}>Jazz</Text>
       </View>
       <View style={styles.option}>
         <RadioButton
@@ -60,7 +60,7 @@ const Equalizer = (props) => {
           uncheckedColor="white"
           color="#3edbf0"
         />
-        <Text style={styles.optionname}>Normal</Text>
+        <Text style={styles.optionname}>Rock</Text>
       </View>
       <View style={styles.option}>
         <RadioButton
@@ -70,7 +70,7 @@ const Equalizer = (props) => {
           uncheckedColor="white"
           color="#3edbf0"
         />
-        <Text style={styles.optionname}>Normal</Text>
+        <Text style={styles.optionname}>Pop</Text>
       </View>
       <View style={styles.option}>
         <RadioButton
@@ -80,7 +80,7 @@ const Equalizer = (props) => {
           uncheckedColor="white"
           color="#3edbf0"
         />
-        <Text style={styles.optionname}>Normal</Text>
+        <Text style={styles.optionname}>Classic</Text>
       </View>
     </View>
   );

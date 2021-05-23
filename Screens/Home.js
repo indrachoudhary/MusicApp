@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         backgroundColor:'black',
         marginBottom:50,
+        marginTop:50
         
     },
     header:{

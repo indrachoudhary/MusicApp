@@ -60,7 +60,7 @@ export class RecentlyPlayed extends Component {
             return (
               <Surface style={styles.surface}>
                 <ImageBackground
-                  style={{ width: 110, height: 110, borderRadius: 10 }}
+                  style={{ width: 100, height: 100, borderRadius: 10,marginBottom:3 }}
                   source={item.img}
                 ></ImageBackground>
                 <Text

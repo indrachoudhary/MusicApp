@@ -9,6 +9,7 @@ export class MusicCatog extends Component {
     super(props);
   }
   render() {
+    {/*----------------------------------------Music Category-------------------------------*/}
     let categories = [
       {
         name: "Rock",
@@ -56,11 +57,11 @@ export class MusicCatog extends Component {
             return (
               <Surface style={styles.surface}>
                 <Image
-                  style={{ width: 110, height: 110, borderRadius: 20 }}
+                  style={{ width: 100, height: 100, borderRadius: 20 }}
                   source={item.img}
                 />
                 <Text
-                  style={{ color: "white", fontSize: 15, fontWeight: "700" }}
+                  style={{ color: "white", fontSize: 15, fontWeight: "700",marginTop:2 }}
                 >
                   {item.name}
                 </Text>
