@@ -4,7 +4,7 @@ import Equalizer from '../Settings/Equalizer';
 import DownloadQuality from '../Settings/DownloadQuality';
 import LanguagePref from '../Settings/LanguagePref';
 import StreamingQuality from '../Settings/StreamingQuality'
-import {Feather, FontAwesome5, MaterialIcons, MaterialCommunityIcons} from 'react-native-vector-icons';
+import {Feather, FontAwesome5, MaterialIcons, MaterialCommunityIcons, AntDesign} from 'react-native-vector-icons';
 
 const Settings = (props) => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -90,9 +90,7 @@ const Settings = (props) => {
           </View>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => props.navigation.navigate("StreamingQuality")}
-      >
+      
         <View style={styles.list}>
           <View
             style={{
@@ -137,10 +135,8 @@ const Settings = (props) => {
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => props.navigation.navigate("DownloadQuality")}
-      >
+      
+      
         <View style={styles.list}>
           <View
             style={{
@@ -185,7 +181,7 @@ const Settings = (props) => {
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableOpacity>
+      
       <View style={{flexDirection:'row', alignItems:'center',width:'100%'}}>
         <Text style={{color:'white', padding:5,fontSize:18, fontWeight:'bold'}}>
           Data Usage
@@ -250,10 +246,11 @@ const Settings = (props) => {
             />
           </View>
         </View>
-        <TouchableOpacity onPress={()=> props.navigation.navigate("Navigation")}>
+      
         <Text  style={{ color: "white",fontSize:18, fontWeight:'600', padding:5}}>
           Connect to App
         </Text>
+        <TouchableOpacity onPress={()=> props.navigation.navigate("Navigation")}>
         <View style={styles.list}>
           <View
             style={{
@@ -275,11 +272,122 @@ const Settings = (props) => {
               paddingRight:5,
             }}
           >
-            <Feather name="Navigation" size={24} color="white"/>
+            <Feather name="navigation" size={24} color="white"/>
            
           </View>
         </View>
         </TouchableOpacity>
+
+        <View style={styles.list}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "80%",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Car Mode</Text>
+            <Text style={{color:'grey',fontSize:12}} >
+              Turns on your Auto Play</Text>
+          </View>
+          <View
+            style={{
+              alignItems: "flex-end",
+              width: "20%",
+              justifyContent: "center",
+            }}
+          >
+            <Switch
+              trackColor={{ false: "#767577", true: "#3edbf0" }}
+              thumbColor={isEnabled ? "yellow" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View>
+        </View>
+        <TouchableOpacity onPress={() => {}}> 
+        <View style={styles.list}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "80%",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Sleep Mode</Text>
+            <Text style={{color:'grey',fontSize:12}} >
+              Set Timer for your music</Text>
+          </View>
+          <View
+            style={{
+              alignItems: "flex-end",
+              width: "20%",
+              justifyContent: "center",
+            }}
+          >
+            <Switch
+              trackColor={{ false: "#767577", true: "#3edbf0" }}
+              thumbColor={isEnabled ? "yellow" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+            <Text style={{color:'grey',}}>10 min</Text>
+          </View>
+          </View>
+        </TouchableOpacity>
+
+        {/*-------HelpAndSupport-------*/}
+        <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>
+          Help And Support
+        </Text>
+        <TouchableOpacity onPress={() => props.navigation.navigate("CustomerSupport")}>
+        <View style={styles.list}>
+          <View
+            style={{
+              width: "50%",
+              alignItems: "flex-start",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Customer Support</Text>
+          </View>
+          <View
+            style={{
+              width: "50%",
+              alignItems: "flex-end",
+              justifyContent: "center",
+              padding: 5
+            }}
+          >
+            <AntDesign name="customerservice" size={28} color="white" />
+          </View>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate("Updates")}>
+        <View style={styles.list}>
+          <View
+            style={{
+              width: "50%",
+              alignItems: "flex-start",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>Updates</Text>
+          </View>
+          <View
+            style={{
+              width: "50%",
+              alignItems: "flex-end",
+              justifyContent: "center",
+              padding: 5
+            }}
+          >
+            <MaterialIcons name="update" size={28} color="white" />
+          </View>
+        </View>
+      </TouchableOpacity>
         </ScrollView>
         
       

@@ -24,14 +24,14 @@ const MyMusic = (props) => {
             activeOpacity={0.5} >
                 <View style={styles.list}>
                     <View style={{width:'10%',justifyContent:'center', alignItems:'center', }}>
-                    <AntDesign name="play" size={35} color="black" />
+                    <AntDesign name="playcircleo" size={35} color="white" />
                     </View>
                     <View style={{width:'80%', justifyContent:'center'}}>
-                    <Text>MyDownload</Text>
-                    <Text>6 songs</Text>
+                    <Text style={{color:"white"}}>MyDownload</Text>
+                    <Text style={{color:"white"}}>6 songs</Text>
                     </View>
                     <View style={{width:'10%',justifyContent:'center', alignItems:'center', alignItems:'flex-end'}}>
-                    <AntDesign name="right" size={30} color="black" />
+                    <AntDesign name="right" size={30} color="white" />
                     </View>
                 </View>
             </TouchableOpacity>
@@ -40,13 +40,13 @@ const MyMusic = (props) => {
             activeOpacity={0.5} >
                 <View style={styles.list1}>
                 <View style={{width:'10%',justifyContent:'center', alignItems:'center',}}>
-                    <AntDesign name="play" size={35} color="black" />
+                    <AntDesign name="playcircleo" size={35} color="white" />
                     </View>
                     <View style={{width:'80%', justifyContent:'center'}}>
-                    <Text>MyFavs</Text>
+                    <Text style={{color:"white"}}>MyFavs</Text>
                     </View>
                     <View style={{width:'10%',justifyContent:'center', alignItems:'center', alignItems:'flex-end'}}>
-                    <AntDesign name="right" size={35} color="black" />
+                    <AntDesign name="right" size={35} color="white" />
                     </View>
                     
                 </View>    
@@ -56,13 +56,13 @@ const MyMusic = (props) => {
             activeOpacity={0.5} >
                 <View style={styles.list2}>
                 <View style={{width:'10%',justifyContent:'center', alignItems:'center'}}>
-                    <AntDesign name="play" size={35} color="black" />
+                    <AntDesign name="playcircleo" size={35} color="white" />
                     </View>
                     <View  style={{width:'80%', justifyContent:'center'}} >
-                    <Text>MyLibrary</Text>
+                    <Text style={{color:"white"}}>MyLibrary</Text>
                     </View>
                     <View style={{width:'10%',justifyContent:'center', alignItems:'center', alignItems:'flex-end'}}>
-                    <AntDesign name="right" size={35} color="black" />
+                    <AntDesign name="right" size={35} color="white" />
                     </View>
                 </View>
             </TouchableOpacity>
@@ -77,13 +77,14 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         alignItems:'center',
+        backgroundColor:'black'
         
     },
     header:{
         flexDirection:'row',
         height:60,
         width:'100%',
-        backgroundColor:'blue',
+        backgroundColor:'#3edbf0',
         alignItems:'center'
     },
     list:{

@@ -26,6 +26,8 @@ import MyDownload from './MyMusic/MyDownload';
 import MyFavs from './MyMusic/MyFavs';
 import Mylibrary from './MyMusic/MyLibrary';
 import Navigation from './Settings/Navigation';
+import CustomerSupport from './Settings/HelpAndSupport/CustomerSupport';
+import Updates from './Settings/HelpAndSupport/Updates';
 
 const Stack = createStackNavigator();
 
@@ -54,6 +56,10 @@ export default function App() {
         <Stack.Screen name = 'MyLibrary' component={Mylibrary}  
         options={{headerShown:false}}/>
         <Stack.Screen name = 'Navigation' component={Navigation}  
+        options={{headerShown:false}}/>
+        <Stack.Screen name = 'CustomerSupport' component={CustomerSupport}  
+        options={{headerShown:false}}/>
+        <Stack.Screen name = 'Updates' component={Updates}  
         options={{headerShown:false}}/>
 
 
