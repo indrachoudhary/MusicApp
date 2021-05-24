@@ -1,9 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View,Switch, ScrollView } from 'react-native';
 import React,{useState} from 'react';
-import Equalizer from '../Settings/Equalizer';
-import DownloadQuality from '../Settings/DownloadQuality';
-import LanguagePref from '../Settings/LanguagePref';
-import StreamingQuality from '../Settings/StreamingQuality'
 import {Feather, FontAwesome5, MaterialIcons, MaterialCommunityIcons, AntDesign} from 'react-native-vector-icons';
 
 const Settings = (props) => {
@@ -11,6 +7,7 @@ const Settings = (props) => {
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
     return (
         <View style={styles.container}>
+          {/*--------------------------------Header-----------------------------*/}
       <View style={styles.header}>
         <View
           style={{ width: "10%", justifyContent: "center", paddingLeft: 10 }}
@@ -32,12 +29,15 @@ const Settings = (props) => {
         </View>
         <View style={{ width: "10%" }}></View>
       </View>
+       {/*--------------------------------ScrollView-----------------------------*/}
       <ScrollView style={{width:'100%'}}>
+         {/*--------------------------------Language Setting-----------------------------*/}
       <Text
         style={{ fontWeight: "bold", fontSize: 18, color: "white", padding: 5 }}
       >
         Language settings
       </Text>
+       {/*--------------------------------Language Preference-----------------------------*/}
       <TouchableOpacity
         onPress={() => props.navigation.navigate("LanguagePref")}
       >
@@ -62,11 +62,13 @@ const Settings = (props) => {
           </View>
         </View>
       </TouchableOpacity>
+       {/*----------------------------Music Quality Header---------------------------------*/}
       <Text
         style={{ fontWeight: "bold", fontSize: 18, color: "white", padding: 5 }}
       >
         Music Quality
       </Text>
+       {/*--------------------------------Equalizer-----------------------------*/}
       <TouchableOpacity onPress={() => props.navigation.navigate("Equalizer")}>
         <View style={styles.list}>
           <View
@@ -90,7 +92,7 @@ const Settings = (props) => {
           </View>
         </View>
       </TouchableOpacity>
-      
+       {/*-------------------------------Streaming Quality -----------------------------*/}
         <View style={styles.list}>
           <View
             style={{
@@ -136,7 +138,7 @@ const Settings = (props) => {
           </View>
         </View>
       
-      
+         {/*--------------------------------Download Quality-----------------------------*/}
         <View style={styles.list}>
           <View
             style={{
@@ -181,14 +183,14 @@ const Settings = (props) => {
             </TouchableOpacity>
           </View>
         </View>
-      
+       {/*--------------------------------Data Usage Header-----------------------------*/}
       <View style={{flexDirection:'row', alignItems:'center',width:'100%'}}>
         <Text style={{color:'white', padding:5,fontSize:18, fontWeight:'bold'}}>
           Data Usage
         </Text>
         <Text style={{color:'grey', padding:5,marginTop:3, marginLeft:10}}> 218.9MB </Text>
       </View>
-      
+       {/*--------------------------------data saver section-----------------------------*/}
         <View style={styles.list}>
           <View
             style={{
@@ -217,7 +219,7 @@ const Settings = (props) => {
             />
           </View>
         </View>
-     
+         {/*--------------------------------Data Usage Warning-----------------------------*/}
      
         <View style={styles.list}>
           <View
@@ -246,10 +248,11 @@ const Settings = (props) => {
             />
           </View>
         </View>
-      
+       {/*--------------------------------Header Connect To App-----------------------------*/}
         <Text  style={{ color: "white",fontSize:18, fontWeight:'600', padding:5}}>
           Connect to App
         </Text>
+         {/*--------------------------------Navigation-----------------------------*/}
         <TouchableOpacity onPress={()=> props.navigation.navigate("Navigation")}>
         <View style={styles.list}>
           <View
@@ -277,7 +280,7 @@ const Settings = (props) => {
           </View>
         </View>
         </TouchableOpacity>
-
+          {/*--------------------------------Car Mode-----------------------------*/}
         <View style={styles.list}>
           <View
             style={{
@@ -306,6 +309,7 @@ const Settings = (props) => {
             />
           </View>
         </View>
+         {/*--------------------------------Sleep Mode-----------------------------*/}
         <TouchableOpacity onPress={() => {}}> 
         <View style={styles.list}>
           <View
@@ -338,10 +342,11 @@ const Settings = (props) => {
           </View>
         </TouchableOpacity>
 
-        {/*-------HelpAndSupport-------*/}
+        {/*------------------------------------Header HelpAndSupport------------------------------*/}
         <Text style={{ color: "white",fontSize:16, fontWeight:'600'}}>
           Help And Support
         </Text>
+         {/*--------------------------------Customer Support-----------------------------*/}
         <TouchableOpacity onPress={() => props.navigation.navigate("CustomerSupport")}>
         <View style={styles.list}>
           <View
@@ -365,6 +370,7 @@ const Settings = (props) => {
           </View>
         </View>
       </TouchableOpacity>
+       {/*--------------------------------Updates-----------------------------*/}
       <TouchableOpacity onPress={() => props.navigation.navigate("Updates")}>
         <View style={styles.list}>
           <View
@@ -389,7 +395,7 @@ const Settings = (props) => {
         </View>
       </TouchableOpacity>
         </ScrollView>
-        
+         {/*--------------------------------End-----------------------------*/}
       
 
     </View>
@@ -410,7 +416,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   list: {
-    backgroundColor: "#222831",
+    backgroundColor: "#111111",
     height: 60,
     width: "100%",
     padding: 5,

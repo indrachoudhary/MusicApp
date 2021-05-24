@@ -19,6 +19,7 @@ const Account = (props) => {
                 </View>
                 <View style={{width:'10%'}}></View>
             </View>
+             {/*--------------------------------Profile Photo-----------------------------*/}
             <ImageBackground
             source= {{uri:"https://www.adobe.com/express/create/media_141efea30cca217e8cb7fb3abb8ed9d663c29d550.jpeg?width=2000&format=webply&optimize=medium",}}
             style={{width:280,height:280,marginTop:20 , marginBottom:20 }}
@@ -27,8 +28,10 @@ const Account = (props) => {
                 style={{position: "absolute",top:230, left:215 }}/>
 
             </ImageBackground>
+             {/*--------------------------------ScrollView-----------------------------*/}
             <ScrollView style={{width:'100%'}}
             contentContainerStyle={{alignItems:'center'}}>
+                 {/*--------------------------------Real Name-----------------------------*/}
             <View style={styles.userinfo}>
                 <View style={{width:'90%'}}>
             <Text style={{fontSize:20, fontWeight:'bold', color:'white'}}>Display name</Text>
@@ -41,6 +44,7 @@ const Account = (props) => {
                 <MaterialIcons name='edit' size={30} color='white'/>
             </View>
             </View>
+             {/*--------------------------------UserInfo-----------------------------*/}
             <View style={styles.userinfo}>
                 <View style={{width:'90%'}}>
             <Text style={{fontSize:20, fontWeight:'bold', color:'white'}}>Username</Text>
@@ -53,7 +57,7 @@ const Account = (props) => {
                 <MaterialIcons name='edit' size={30} color='white'/>
             </View>
             </View>
-
+             {/*--------------------------------UserEmail-----------------------------*/}
             <View style={styles.userinfo}>
                 <View style={{width:'90%'}}>
             <Text style={{fontSize:20, fontWeight:'bold', color:'white'}}>Email</Text>
@@ -66,6 +70,7 @@ const Account = (props) => {
                 <MaterialIcons name='edit' size={30} color='white'/>
             </View>
             </View>
+             {/*--------------------------------Contact Number-----------------------------*/}
             <View style={styles.userinfo}>
                 <View style={{width:'90%'}}>
             <Text style={{fontSize:20, fontWeight:'bold', color:'white'}}>Contact</Text>
@@ -78,12 +83,14 @@ const Account = (props) => {
                 <MaterialIcons name='edit' size={30} color='white'/>
             </View>
             </View>
+             {/*--------------------------------Signout Button Section-----------------------------*/}
             <View style={styles.button}>
                 <TouchableOpacity onPress={()=> props.navigation.navigate("Login")}>
                     <Text style={{color:'black',fontSize:18,fontWeight:"bold"}}>SignOut</Text>
                 </TouchableOpacity>
             </View>
             </ScrollView>
+             {/*--------------------------------End-----------------------------*/}
         </View>
     )
 }

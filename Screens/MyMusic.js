@@ -9,6 +9,7 @@ import { AntDesign } from '@expo/vector-icons';
 const MyMusic = (props) => {
     return (
         <View style={styles.container}>
+             {/*--------------------------------Header-----------------------------*/}
             <View style={styles.header}>
                 
                 <View style={{alignItems:'center', width:'100%'}}>
@@ -19,6 +20,7 @@ const MyMusic = (props) => {
                 
                 
             </View>
+             {/*--------------------------------My Download-----------------------------*/}
             <TouchableOpacity onPress={()=> props.navigation.navigate('MyDownload')}
             style={{width:'100%',height:50}}
             activeOpacity={0.5} >
@@ -35,6 +37,7 @@ const MyMusic = (props) => {
                     </View>
                 </View>
             </TouchableOpacity>
+             {/*--------------------------------My Favs-----------------------------*/}
             <TouchableOpacity onPress={()=> props.navigation.navigate('MyFavs')}
             style={{width:'100%',height:50}}
             activeOpacity={0.5} >
@@ -51,6 +54,7 @@ const MyMusic = (props) => {
                     
                 </View>    
             </TouchableOpacity>
+             {/*--------------------------------My Library-----------------------------*/}
             <TouchableOpacity onPress={()=> props.navigation.navigate('MyLibrary')}
             style={{width:'100%',height:50}}
             activeOpacity={0.5} >

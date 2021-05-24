@@ -10,6 +10,7 @@ import Trending from '../Home/Trending';
 const Home = (props) => {
     return (
         <View style={styles.container}>
+             {/*--------------------------------Header-----------------------------*/}
             <View style={styles.header}>
             <View style={{width:'10%'}}>
             <TouchableOpacity onPress={()=> props.navigation.openDrawer()}>
@@ -24,6 +25,7 @@ const Home = (props) => {
             <View style={{width:'10%'}}>
             </View>
             </View>
+             {/*-------------------------------Search-----------------------------*/}
             <View style={styles.search}>
                 <View style={{width:'90%', flexDirection:'row'}}>
           <FontAwesome name="search" size={24} color="#929695" />
@@ -56,6 +58,7 @@ const Home = (props) => {
                 <MusicList name='On My Way' details='Alan Walker, Sabrina Carpenter, Farruko'/>
 
     </ScrollView>*/}
+            {/*--------------------------------content-----------------------------*/}
             <MusicCatog navigation={props.navigation}/>
             <RecentlyPlayed navigation={props.navigation}/>
             <TodaysPick navigation={props.navigation}/>
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         backgroundColor:'black',
         marginBottom:50,
-        marginTop:50
+        paddingTop:40
         
     },
     header:{

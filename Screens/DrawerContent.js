@@ -24,10 +24,10 @@ export function DrawerContent(props) {
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
       <DrawerContentScrollView {...props}>
-        {/*------DrawerContent--------*/}
+        {/*-------------------------------------DrawerContent---------------------------------*/}
         <View style={styles.drawerContent}>
 
-          {/*------UserInfo------*/}
+          {/*---------------------------------------------UserInfo----------------------------------------*/}
           <View style={styles.userinfo}>
             <TouchableOpacity activeOpacity={0.5}
             onPress={()=> props.navigation.navigate("Account")} >
@@ -47,9 +47,9 @@ export function DrawerContent(props) {
             </View>
             </TouchableOpacity>
           </View>
-            {/*-------DrawerSection-----*/}
+            {/*-------------------------------------DrawerSection--------------------------------------*/}
           <Drawer.Section style={styles.section}>
-            {/*-------DrawerItem-----*/}
+            {/*-------------------------------------Music Section-------------------------------------------*/}
             <DrawerItem
               icon={({ color, size }) => (
                 <Ionicons name="musical-notes" color="white" size={size} />
@@ -62,6 +62,7 @@ export function DrawerContent(props) {
                 props.navigation.navigate("Home");
               }}
             />
+             {/*--------------------------------Setting Section-----------------------------*/}
             <DrawerItem
               icon={({ color, size }) => (
                 <Ionicons name="settings" color="white" size={size} />
@@ -73,7 +74,7 @@ export function DrawerContent(props) {
                 props.navigation.navigate("Settings");
               }}
             />
-            {/*-------Storage-----*/}
+            {/*-------------------------------------------------Storage Section----------------------------------------------*/}
             <DrawerItem
               icon={({ color, size }) => (
                 <MaterialIcons name="storage" color="white" size={size} />
@@ -93,6 +94,7 @@ export function DrawerContent(props) {
               101.8 GB free
             </Text>
             </View>
+             {/*--------------------------------Clear Cache-----------------------------*/}
             <DrawerItem
               icon={({ color, size }) => (
                 <MaterialCommunityIcons name="broom" color="white" size={size} />

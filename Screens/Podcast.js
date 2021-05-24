@@ -44,4 +44,9 @@ const styles = StyleSheet.create({
         height: 60,
         flexDirection: "row",
       },
+      headertext:{
+        fontSize:18,
+        fontWeight:'bold',
+        color:'black'
+    },
 })
