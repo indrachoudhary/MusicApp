@@ -7,27 +7,23 @@ const CustomerSupport = (props) => {
         <View style={styles.container}>
             {/*--------------------Header-------------------*/}
         <View style={styles.header}>
-          <View
-            style={{ width: "10%", justifyContent: "center", paddingLeft: 5 }}
-          >
+        
+          <View style={{ width: "10%", justifyContent: "center", paddingLeft: 5 }}>
               <TouchableOpacity onPress={()=> props.navigation.navigate("Settings")}>
               <Ionicons name="chevron-back" size={30} color="black" />
               </TouchableOpacity>
           </View>
-          <View
-            style={{
-              width: "80%",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+         
+          <View style={{ width: "80%",alignItems: "center",justifyContent: "center",}}>
             <Text style={styles.headertext}>Customer Support</Text>
           </View>
   
           <View style={{ width: "10%" }}></View>
+       
         </View>
         <ScrollView style={{width:"100%"}}
         contentContainerStyle={{alignItems:"center"}}>
+       
         {/*-----------------------------------Contact Us-----------------------------------*/}
         
         <Text style={{color:"white", fontSize:18, fontWeight:"600", marginTop:10}}>Contact Us</Text>

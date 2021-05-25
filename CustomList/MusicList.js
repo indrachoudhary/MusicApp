@@ -1,36 +1,39 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Fontisto } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
+import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
 
-const MusicList = ({name, details}) => {
-    
-    return (
-        <View style={styles.container}>
-            
-            <View style={{width:'100%', padding:10}}>
-                <Text style={{fontSize:18,fontWeight:'bold', color:'white'}}>
-                    {name}
-                </Text>
-                <Text style={{color:'#3edbf0'}}>
-                    {details}
-                </Text>
-            </View>
-            
+import {
+  Ionicons,
+  AntDesign,
+} from "react-native-vector-icons";
+
+const MusicList = ({ name, artist }) => {
+  return (
+    <View style={styles.container}>
+      <View style={{ width: "90%", flexDirection: "row",alignItems:"center" }}>
+        <Ionicons name="musical-notes" size={24} color="white" />
+        <View style={{ paddingLeft: 10 }}>
+          <Text style={{ fontWeight: "700", fontSize: 17 , color:"white"}}>{name}</Text>
+          <Text style={{ color: "#3edbf0" }}>{artist}</Text>
         </View>
-    )
-}
+      </View>
 
-export default MusicList
+      <View style={{ width: "10%", alignItems: "flex-end" }}>
+        <AntDesign name="heart" size={24} color="white" />
+      </View>
+    </View>
+  );
+};
+
+export default MusicList;
 
 const styles = StyleSheet.create({
-    container:{
-        flexDirection:'row',
-        height:150,
-        width:150,
-        alignItems:'center',
-        backgroundColor:'black',
-
-    }
-})
+  container: {
+    backgroundColor: "#111111",
+    width: "100%",
+    alignItems: "center",
+    borderBottomWidth: 0.2,
+    borderBottomColor: "#393e46",
+    flexDirection: "row",
+    padding: 10,
+  },
+});

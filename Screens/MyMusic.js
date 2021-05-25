@@ -60,13 +60,13 @@ const MyMusic = (props) => {
             activeOpacity={0.5} >
                 <View style={styles.list2}>
                 <View style={{width:'10%',justifyContent:'center', alignItems:'center'}}>
-                    <AntDesign name="playcircleo" size={35} color="white" />
+                    <AntDesign name="playcircleo" size={30} color="white" />
                     </View>
                     <View  style={{width:'80%', justifyContent:'center'}} >
                     <Text style={{color:"white"}}>MyLibrary</Text>
                     </View>
                     <View style={{width:'10%',justifyContent:'center', alignItems:'center', alignItems:'flex-end'}}>
-                    <AntDesign name="right" size={35} color="white" />
+                    <AntDesign name="right" size={30} color="white" />
                     </View>
                 </View>
             </TouchableOpacity>
