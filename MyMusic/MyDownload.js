@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View , TouchableOpacity,ScrollView, TextInput} from 'react-native'
 import { Ionicons, FontAwesome } from "react-native-vector-icons";
 import MusicList from '../CustomList/MusicList';
+import MyDownloadList from '../CustomList/MyDownloadList';
 const MyDownload = (props) => {
     return (
         <View style={styles.container}>
@@ -30,7 +31,7 @@ const MyDownload = (props) => {
           <FontAwesome name="search" size={22} color="black" />
           </View>
         </View>
-
+         <MyDownloadList navigation={props.navigation}/>
         {/*<View style={styles.search}>
                 <View style={{width:'90%', flexDirection:'row'}}>
           <FontAwesome name="search" size={20} color="#929695" />
@@ -39,7 +40,7 @@ const MyDownload = (props) => {
           </View>*/}
        
        
-        <ScrollView style={{ width: "100%" }}>
+       {/* <ScrollView style={{ width: "100%" }}>
           <TouchableOpacity>
         <MusicList name="Dil mere" artist="Local train" />
         </TouchableOpacity>
@@ -64,7 +65,7 @@ const MyDownload = (props) => {
         <MusicList name="Tum mile" artist="Unknown" />
         </TouchableOpacity>
      
-      </ScrollView>
+      </ScrollView> */}
         </View>
         
     )

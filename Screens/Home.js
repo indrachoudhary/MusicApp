@@ -7,6 +7,7 @@ import MusicCatog from '../Home/MusicCatog';
 import RecentlyPlayed from '../Home/RecentlyPlayed';
 import TodaysPick from '../Home/TodaysPick';
 import Trending from '../Home/Trending';
+import CategoryCarousel from '../CustomList/CategoryCarousel';
 const Home = (props) => {
     return (
         <View style={styles.container}>
@@ -59,7 +60,7 @@ const Home = (props) => {
 
     </ScrollView>*/}
             {/*--------------------------------content-----------------------------*/}
-            <MusicCatog navigation={props.navigation}/>
+            <CategoryCarousel navigation={props.navigation}/>
             <RecentlyPlayed navigation={props.navigation}/>
             <TodaysPick navigation={props.navigation}/>
             <Trending navigation={props.navigation}/>

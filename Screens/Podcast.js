@@ -1,32 +1,21 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Ionicons } from "react-native-vector-icons";
+import {LinearGradient} from 'expo-linear-gradient'
 
 const Podcast = (props) => {
     return (
-        <View style={styles.container}>
-        <View style={styles.header}>
-          <View
-            style={{ width: "10%", justifyContent: "center", paddingLeft: 5 }}
-          >
-           
-              <Ionicons name="chevron-back" size={30} color="black" />
-           
-          </View>
-          <View
-            style={{
-              width: "80%",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={styles.headertext}>Podcast</Text>
-          </View>
-  
-          <View style={{ width: "10%" }}></View>
-        </View>
-        
-        </View>
+      <LinearGradient
+      style={styles.conatiner}
+      colors={["#e1701a", "#ff8303", "#ff8303", "orange", "orange"]}
+    >
+      <Text style={{ fontSize: 30, color: "white", fontWeight: "bold" }}>
+        Podcast
+      </Text>
+      {/*-------------------------------------Content--------------------------------------------------------------------------------------------------------------------- */}
+      <PodcastCaraousel />
+      <PopularRadioList navigation={props.navigation} />
+    </LinearGradient>  
         
     )
 }
