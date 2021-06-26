@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native'
 import {Ionicons, SimpleLineIcons, MaterialCommunityIcons} from 'react-native-vector-icons'
 import Slider from '@react-native-community/slider'
+import { Audio, Video } from 'expo-av';
 const MusicPlayer = ({navigation, route}) => {
     const {item} = route.params;
     return (

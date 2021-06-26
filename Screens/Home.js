@@ -36,7 +36,7 @@ const Home = (props) => {
             <MaterialIcons name="keyboard-voice" size={28} color="#929695" />
           </View>
         </View>
-            <ScrollView style={{flex:1, width:'100%'}}>
+            <ScrollView style={{flex:1, width:'100%', height:"100%"}}>
            {/* <View style={{width:'100%', padding:5}}>
             <Text style={{fontSize:18, color:'#3edbf0', fontWeight:'bold'}}>Recently Played...</Text>
             </View>
@@ -60,7 +60,7 @@ const Home = (props) => {
 
     </ScrollView>*/}
             {/*--------------------------------content-----------------------------*/}
-            <CategoryCarousel navigation={props.navigation}/>
+            <MusicCatog navigation={props.navigation}/>
             <RecentlyPlayed navigation={props.navigation}/>
             <TodaysPick navigation={props.navigation}/>
             <Trending navigation={props.navigation}/>
@@ -77,8 +77,7 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems:'center',
         backgroundColor:'black',
-        marginBottom:50,
-        paddingTop:40
+        
         
     },
     header:{

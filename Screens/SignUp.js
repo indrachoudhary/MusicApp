@@ -1,7 +1,30 @@
-import React from 'react'
+import React, {useEffect,useState} from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View,ImageBackground } from 'react-native'
-
+import { db,auth } from '../Config';
 const SignUp = ({navigation}) => {
+    const [email, setEmail]=useState("");
+    const [password, setPassword]= useState("");
+    const [username, setUsername]= useState("");
+
+    const register = () => {
+        auth
+          .createUserWithEmailAndPassword(email, password)
+          .then((authUser) => {
+            authUser.user.updateProfile({
+              displayName: username,
+            });
+            db.collection("users").doc(auth.currentUser.uid).set({
+              name: username,
+              email: email,
+              imgUrl: "",
+              phone: "",
+            });
+            navigation.navigate("Home");
+          })
+          .catch((error) => alert(error));
+      };
+
+
     return (
         
         
@@ -15,23 +38,30 @@ const SignUp = ({navigation}) => {
             placeholder='Username'
             style={styles.input}
             placeholderTextColor='black'
+            value={username}
+            onChangeText={(text)=> setUsername(text) }
             />
             <TextInput
             placeholder='Email'
             style={styles.input}
             placeholderTextColor='black'
+            value={email}
+            onChangeText={(text)=> setEmail(text) }
             />
             <TextInput
             placeholder='Password'
             style={styles.input}
             placeholderTextColor='black'
+            value={password}
+            onChangeText={(text)=> setPassword(text) }
             />
             <TextInput
             placeholder='Confirm Password'
             style={styles.input}
             placeholderTextColor='black'
+            
             />
-            <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.button} onPress={register}>
                 <Text style={{fontSize:18, fontWeight:'bold'}}>
                     SignUp
                 </Text>

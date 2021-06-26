@@ -1,8 +1,34 @@
 import { NavigationHelpersContext } from '@react-navigation/core'
-import React from 'react'
+import React,  { useState, useEffect }  from 'react'
 import { View, Text, TextInput, Button, TouchableOpacity,StyleSheet,ImageBackground } from 'react-native'
+import { auth, db } from '../Config'
 
 const Login = ({navigation}) => {
+    const [email, setEmail]=useState("");
+    const [password, setPassword]= useState("");
+    const [loading, setLoading]= useState(true);
+
+    useEffect(() => {
+        const unsub = auth.onAuthStateChanged((authUser) => {
+          if (authUser) {
+            navigation.replace("Home"),
+              setLoading(false),
+              console.log("user Present ");
+          } else {
+            console.log("no user");
+          }
+        });
+        return unsub;
+      }, []);
+    
+      const login = () => {
+        auth
+          .signInWithEmailAndPassword(email, password)
+          .then((authUser) => {
+            navigation.navigate("Home");
+          })
+          .catch((error) => alert(error));
+      };
     return (
         
         <View style={styles.container}>
@@ -15,13 +41,17 @@ const Login = ({navigation}) => {
             placeholder='Email'
             style={styles.input1}
             placeholderTextColor='black'
+            value={email}
+            onChangeText={(text)=> setEmail(text) }
             />
             <TextInput
             placeholder='Password'
             style={styles.input2}
             placeholderTextColor='black'
+            value={password}
+            onChangeText={(text)=> setPassword(text)}
             />
-            <TouchableOpacity style={styles.button1} onPress={()=> navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.button1} onPress={login}>
                 <Text style={{fontSize:18, fontWeight:'bold'}}>
                     Login
                 </Text>

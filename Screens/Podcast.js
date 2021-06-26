@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Ionicons } from "react-native-vector-icons";
 import {LinearGradient} from 'expo-linear-gradient'
+import PopularRadioList from '../CustomList/PopularRadioList';
 
 const Podcast = (props) => {
     return (
@@ -13,7 +14,7 @@ const Podcast = (props) => {
         Podcast
       </Text>
       {/*-------------------------------------Content--------------------------------------------------------------------------------------------------------------------- */}
-      <PodcastCaraousel />
+      {/* <PodcastCaraousel /> */}
       <PopularRadioList navigation={props.navigation} />
     </LinearGradient>  
         
